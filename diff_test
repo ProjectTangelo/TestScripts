@@ -1,0 +1,25 @@
+#!/bin/bash
+#Script to perform diff test on screenshots
+#Runs in folder where screenshots are
+#Assumes screenshots were saved as .png files
+
+declare -i counter=0
+pic1 = ""
+pic2 = ""
+
+for pic in *.png
+do
+  if test $((counter == 0))
+  then
+    $pic1= "$pic"
+    $((counter++))
+  else
+    $pic2="$pic"
+    pic3="diff"
+    $pic3="$pic3$counter"
+    $pic3+=".jpeg"
+    compare "$pic1" "$pic2" -compose src "$pic3"
+    $((counter++))
+    $pic1="$pic2"
+  fi
+done
