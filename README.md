@@ -1,8 +1,9 @@
-# TestScripts
+# VisualDiff 
 This repository will hold the test scripts for the project
 
 
 Format for screenCap.js:
+  
   phantomjs screenCap.js websiteUrl
 
 
